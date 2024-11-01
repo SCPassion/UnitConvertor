@@ -24,18 +24,21 @@ let storeData = {
 }
 
 convertBtn.addEventListener("click", function() {
-    let inputData = Number(inputField.value)
 
-    storeData.feet = (inputData * 3.281).toFixed(2)
-    storeData.meter = (inputData / 3.281).toFixed(2)
+    if(inputField.value) {
+        let inputData = Number(inputField.value)
 
-    storeData.gallon = (inputData * 0.264).toFixed(2)
-    storeData.liter = (inputData / 0.264).toFixed(2)
+        storeData.feet = (inputData * 3.281).toFixed(2)
+        storeData.meter = (inputData / 3.281).toFixed(2)
 
-    storeData.pound = (inputData * 2.204).toFixed(2)
-    storeData.kilogram = (inputData / 2.204).toFixed(2)
+        storeData.gallon = (inputData * 0.264).toFixed(2)
+        storeData.liter = (inputData / 0.264).toFixed(2)
 
-    render(inputData, storeData)
+        storeData.pound = (inputData * 2.204).toFixed(2)
+        storeData.kilogram = (inputData / 2.204).toFixed(2)
+
+        render(inputData, storeData)
+    }
 })
 
 function render (input, data) {
